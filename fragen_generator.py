@@ -14,15 +14,18 @@ st.write("Drücke auf den Button, um eine neue Frage für Paare zu generieren. D
 if st.button("Neue Frage generieren"):
     try:
         # Anfrage an die OpenAI-API senden, um eine Frage zu generieren
-        response = openai.Completion.create(
-            model="text-davinci-003",
-            prompt="Erstelle eine neue Frage für Paare, die sie diskutieren können. Die Frage kann lustig, tiefgründig oder persönlich sein.",
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "Du bist ein kreativer Fragen-Generator für Paare."},
+                {"role": "user", "content": "Erstelle eine neue Frage für Paare, die sie diskutieren können. Die Frage kann lustig, tiefgründig oder persönlich sein."}
+            ],
             max_tokens=60,
             temperature=0.7,
         )
 
         # Die generierte Frage extrahieren
-        question = response.choices[0].text.strip()
+        question = response.choices[0].message['content'].strip()
 
         # Frage auf der Streamlit-Seite anzeigen
         st.success(f"Hier ist deine Frage: **{question}**")
