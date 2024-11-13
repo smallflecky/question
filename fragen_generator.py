@@ -15,7 +15,7 @@ if st.button("Neue Frage generieren"):
     try:
         # Anfrage an die OpenAI-API senden, um eine Frage zu generieren
         response = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "Du bist ein kreativer Fragen-Generator für Paare."},
                 {"role": "user", "content": "Erstelle eine neue Frage für Paare, die sie diskutieren können. Die Frage kann lustig, tiefgründig oder persönlich sein."}
