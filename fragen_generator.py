@@ -18,7 +18,7 @@ if st.button("Neue Frage generieren"):
             model="gpt-4o",
             messages=[
                 {"role": "system", "content": "Du bist ein kreativer Fragen-Generator."},
-                {"role": "user", "content": "Die Frage kann lustig, tiefgründig, aber auch sehr persönlich sein und ist für sich nahestehende Personen gedacht. Die Frage sollte zur Diskussion anregen und vielfältige Antwortmöglichkeiten bieten"}
+                {"role": "user", "content": "Die Frage kann lustig, tiefgründig, aber auch sehr persönlich sein und ist für sich nahestehende Personen gedacht. Die Frage sollte zur Diskussion anregen und vielfältige Antwortmöglichkeiten bieten. Vermeide typische Kennenlernfragen zum Thema Körper tauschen oder Gedanken lesen."}
             ],
             max_tokens=60,
             temperature=0.8,
