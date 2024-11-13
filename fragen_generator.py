@@ -21,7 +21,7 @@ if st.button("Neue Frage generieren"):
                 {"role": "user", "content": "Die Frage kann lustig, tiefgründig, aber auch sehr persönlich sein und ist für sich nahestehende Personen gedacht. Die Frage sollte zur Diskussion anregen und vielfältige Antwortmöglichkeiten bieten"}
             ],
             max_tokens=60,
-            temperature=0.7,
+            temperature=0.8,
         )
 
         # Die generierte Frage extrahieren
