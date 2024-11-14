@@ -17,8 +17,19 @@ if st.button("Neue Frage generieren"):
         response = openai.ChatCompletion.create(
             model="gpt-4o",
             messages=[
-                {"role": "system", "content": "Du bist ein kreativer Fragen-Generator."},
-                {"role": "user", "content": "Die Frage kann lustig, tiefgründig, aber auch sehr persönlich sein und ist für sich nahestehende Personen gedacht. Die Frage sollte zur Diskussion anregen und vielfältige Antwortmöglichkeiten bieten. Vermeide typische Kennenlernfragen zum Thema Körper tauschen oder Gedanken lesen."}
+                {"role": "system", "content": "Du bist ein kreativer Fragen-Generator für Paare, die Fragen müssen aber nicht zwingend nur für Paare geeignet sein."},
+                {"role": "user", "content": "Die Frage kann lustig, tiefgründig, aber auch sehr persönlich sein und soll zu einer längeren Diskussion anregen. Vermeide typische Fragen wie Wenn du einen Tag in einem anderen Körper wärst oder Gedanken lesen können. Stelle sicher, dass die Frage originell ist und unterschiedliche Perspektiven zulässt. "
+            "Hier sind Beispiele für die Art von Fragen, die ich meine: 
+            "1. 'Was ist ein gemeinsames Erlebnis, das dir besonders in Erinnerung geblieben ist und warum?' "
+            "2. 'Was denkst du, war der prägendste Moment deiner Kindheit, der dich heute noch beeinflusst?' "
+            "3. 'Gibt es eine Eigenschaft von dir, die du gerne mehr in unserer Beziehung zeigen würdest?' "
+            "4. Wenn wir beide ein eigenes Kochbuch schreiben würden, wie würde es heißen und was wäre unser verrücktestes Rezept?' "
+             "5. Angenommen, wir müssten ein Jahr in einem Tiny House leben – was wäre wohl die größte Herausforderung für uns beide?' "
+            "6. Gibt es eine Erfahrung, die wir noch nicht gemeinsam gemacht haben, die du dir aber wünschst? Warum?' "
+            "Erstelle eine neue Frage im gleichen Stil.
+            " 7. Gibt es eine Situation, in der du dir mehr Unterstützung von mir gewünscht hättest? Was hätte ich tun können, um dir zu helfen?' "
+            "8. Was ist eine Herausforderung, vor der du schon länger stehst und die du gerne besser meistern würdest?' "
+            "9. Was ist ein Traum, den du schon lange hast, den aber nur wenige Menschen kennen?' "}
             ],
             max_tokens=60,
             temperature=0.8,
